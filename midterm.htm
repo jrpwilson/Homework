@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://mc.local/ca276-2013-01/samples/midterm/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>midterm</title>
+	<link rel="stylesheet" type="text/css" href="./midterm-files/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./midterm-files/styles.css">
+</head>
+<body>
+	<section class="container">
+		<section class="row">
+			<h1>CA 276 Mid-Term</h1>
+		</section>
+		<section class="row">
+			<article class="span4">
+				<section>
+					<h2>Variables</h2>
+					<p>Create variables to contain the following. Initialize the variables with sample data. Use the most appropriate data type.</p>
+					<ol>
+						<li>The name of this course</li>
+						<li>Number of days in March</li>
+						<li>Do you know JavaScript?</li>
+						<li>A list of the best restaurants in Rockville</li>
+						<li>Expected annual salary of a Web developer</li>
+					</ol>
+				</section>
+			</article>
+			<article class="span4">
+				<section>
+					<h2>Math</h2>
+					<p>Write the following math operations using JavaScript. Do not hard-code the result. Send the results to the console.</p>
+					<ol>
+						<li>The price of a $20 drink plus 25% sales tax</li>
+						<li>The cost of a $400 smartphone after a 15% discount</li>
+						<li>The cost of four $5 sub sandwiches</li>
+						<li>The cost of a $75 dinner split evenly among 5 people</li>
+						<li>0.1 multiplied by 0.2. Bonus: Round the result to two decimal places.</li>
+					</ol>
+				</section>
+			</article>
+			<article class="span4">
+				<section>
+					<h2>Conditional logic</h2>
+					<p>Write the following either as a <code>switch</code> statement or combination of <code>if/else</code> blocks.</p>
+					<ol>
+						<li>If your editor is “Eclipse” then send “Java developer” to the console.</li>
+						<li>If your editor is “Aptana Studio” then send “Web developer” to the console.</li>
+						<li>If your editor is “Sublime Text” then send “I am awesome” to the console.</li>
+						<li>If your editor is “Notepad” then send “Wrong editor” to the console.</li>
+					</ol>
+				</section>
+			</article>
+		</section>
+		<section class="row">
+			<article class="span4">
+				<section>
+					<h2>Loops</h2>
+					<p>Write a loop that iterates the numbers from 5 to 15. You can write this as a <code>for</code> or a <code>while</code> loop. Each loop iteration should send the value of <code>i</code> to the console.</p>
+				</section>
+			</article>
+			<article class="span4">
+				<section>
+					<h2>Functions</h2>
+					<p>Write a function <code>average</code> that takes three arguments: <code>num1</code>, <code>num2</code>, <code>num3</code>. The function will return (i.e. do not use console.log) the average of the three arguments. To get the average you will add them together and divide the total by three.</p>
+					<p>Bonus: Write code that ensures all three arguments are of type <em>number</em>. If any of the three are not numbers have the function return <code>NaN</code> (NaN is a reserved value in JavaScript, so don't put it inside single quotes).</p>
+				</section>
+			</article>
+			<article class="span4">
+				<section>
+					<h2>Question</h2>
+					<p>What is the hardest part about learning JavaScript?</p>
+				</section>
+			</article>
+		</section>
+	</section>
+
+	<!-- Your answers go here -->
+	<script>
+		// Problem 1
+		var courseName,
+			marchDays,
+			knowJavacsript,
+			bestRestaurants,
+			developerSalary;
+
+
+		courseName = "CA276 Fundamentals of Javascript";
+		marchDays = 31;
+		knowJavascript = true;
+		bestRestaurants = ["Pho95", "Temari", "iHOP"];
+		developerSalary = 60000;
+
+		console.log(courseName);
+		console.log(marchDays);
+		console.log(knowJavascript);
+		console.log(bestRestaurants);
+		console.log(developerSalary);
+		
+		//JG: Very clean set up. Nice work.
+
+		// Problem 2
+		
+		var drinkPrice,
+			taxRate,
+			phoneRetailPrice,
+			phoneDiscout,
+			subPrice,
+			dinnerPrice;
+
+		drinkPrice = 20;
+		taxRate = 1.25;
+		phoneRetailPrice = 400;
+		phoneDiscountRate = .85;
+		subPrice = 5;
+		dinnerPrice = 75;
+
+		drinkTotal = "$" + (drinkPrice * taxRate).toFixed(2);
+		phoneTotal = "$" + (phoneRetailPrice * phoneDiscountRate).toFixed(2);
+		subwayTotal = "$" + (4 * subPrice).toFixed(2);
+		dinnerShareTotal = "$" + (dinnerPrice / 5).toFixed(2);
+		multTotal = (.1 * .2).toFixed(2);
+
+		console.log(drinkTotal);
+		console.log(phoneTotal);
+		console.log(subwayTotal);
+		console.log(dinnerShareTotal);
+		console.log(multTotal);	
+		
+		//JG: Also very easy to follow. Prepending the $ and rounding to the nearest decimal place certainly makes for clean output. If you are ever displaying numbers to users that are the result of arithmetic always use toFixed(x) to make sure nothing strange like 0.02000000004 happens.
+
+		// Problem 3
+		
+		var editor = "chalkboard";
+		
+		function editorResponse(editor)	{
+			if (editor === "Eclipse") {
+				return "Java Developer";
+			}
+
+			if (editor === "Aptana Studio") {
+				return "Web Developer";
+			}
+
+			if (editor === "Sublime Text") {
+				return "I am awesome";
+			}
+
+			if (editor === "Notepad") {
+				return "Wrong editor";
+			}
+			
+			return "Are you using a chalkboard?";
+
+			//JG: I inserted a few line breaks for readability
+		}
+
+		// Problem 4
+		var i;
+
+		//JG: I put spaces around operators and removed the redundant var
+		for (i = 5; i < 16; i++) {
+			console.log(i);
+		}
+
+		// Problem 5
+
+		function average(num1, num2, num3) {
+			//JG: Moved var to the top of the function and cleaned up the indentation. I know we talked about having "var" statements in the middle. For such a small function it's easier to just have them at the top.
+			var avg;
+
+			//JG: Added line breaks for readability. Also removed superfluous parentheses.
+
+			if (typeof(num1) !== 'number' || typeof(num2) !== 'number' || typeof(num3) !== 'number') {
+				return NaN;
+			}
+
+			//JG: Good work on the ordering of the calculation
+			avg = (num1 + num2 + num3) / 3;
+
+			return avg;
+		}
+
+		// Problem 6
+
+		/* So far getting the syntax correct has proven to be the hardest part, but now that we are getting into objects and callback functions there are more complex matters to be pondered. */
+
+		//JG: From what I can gather you're doing really well with syntax. Objects are where things start to get fun!
+		
+	</script>
+
+</body>
+</html>

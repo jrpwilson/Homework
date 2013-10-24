@@ -1,0 +1,28 @@
+body {
+	background-color: #eee;
+	counter-reset: problem;
+}
+
+p:nth-last-child(2) {
+	margin-bottom: 14px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+article h2:before {
+	counter-increment: problem;
+	content: "Problem " counter(problem) ": ";
+}
+
+.span4 {
+	background-color: #fff;
+	border-radius: 12px;
+	min-height: 400px;
+	margin: 8px;
+}
+
+.span4 section {
+	padding: 2px 12px;
+}
