@@ -30,24 +30,24 @@
 // }
 
 var athlete1 = {};
-	athlete1.name = 'Usain Bolt',
-	athlete1.age = 25,
-	athlete1.countryOfOrigin = 'Jamaica',
-	athlete1.height = '6\'5\"',
-	athlete1.medals = ["100m Gold 2008", "200m Gold 2008", "4x100m Relay Gold 2008", "100m Gold 2012", "200m Gold 2012", "4x100m Relay Gold 2012"],
-	athlete1.olympian = true;
+athlete1.name = 'Usain Bolt',
+athlete1.age = 25,
+athlete1.countryOfOrigin = 'Jamaica',
+athlete1.height = '6\'5\"',
+athlete1.medals = ["100m Gold 2008", "200m Gold 2008", "4x100m Relay Gold 2008", "100m Gold 2012", "200m Gold 2012", "4x100m Relay Gold 2012"],
+athlete1.olympian = true;
 
-	athlete1.introduce = function () {
-		var introduction = "";
-		introduction = "'Hello!', my name is " + athlete1.name + " and I am from " + athlete1.countryOfOrigin +".";
-		return introduction;
-	};
+athlete1.introduce = function() {
+	var introduction = "";
+	introduction = "'Hello!', my name is " + athlete1.name + " and I am from " + athlete1.countryOfOrigin + ".";
+	return introduction;
+};
 
-	athlete1.addMedal = function (medal) {
-		medal = medal.toString();
-		athlete1.medals.push (medal);
-		console.log(athlete1.medals);
-	};
+athlete1.addMedal = function(medal) {
+	medal = medal.toString();
+	athlete1.medals.push(medal);
+	console.log(athlete1.medals);
+};
 
 // Problem 2
 // Create the object using the associate array syntax (i.e. strings within square brackets).
@@ -56,24 +56,24 @@ var athlete1 = {};
 // 
 // }
 var athlete2 = {};
-	athlete2['name'] = 'Usain Bolt',
-	athlete2['age'] = 25,
-	athlete2['countryOfOrigin'] = 'Jamaica',
-	athlete2['height'] = '6\'5\"',
-	athlete2['medals'] = ["100m Gold 2008", "200m Gold 2008", "4x100m Relay Gold 2008", "100m Gold 2012", "200m Gold 2012", "4x100m Relay Gold 2012"],
-	athlete2['olympian'] = true;
+athlete2['name'] = 'Usain Bolt',
+athlete2['age'] = 25,
+athlete2['countryOfOrigin'] = 'Jamaica',
+athlete2['height'] = '6\'5\"',
+athlete2['medals'] = ["100m Gold 2008", "200m Gold 2008", "4x100m Relay Gold 2008", "100m Gold 2012", "200m Gold 2012", "4x100m Relay Gold 2012"],
+athlete2['olympian'] = true;
 
-	athlete2['introduce'] = function () {
-		var introduction ="";
-		introduction = "'Hello!', my name is " + athlete2.name + " and I am from " + athlete2.countryOfOrigin +".";
-		return introduction;
-	};
+athlete2['introduce'] = function() {
+	var introduction = "";
+	introduction = "'Hello!', my name is " + athlete2.name + " and I am from " + athlete2.countryOfOrigin + ".";
+	return introduction;
+};
 
-	athlete2['addMedal'] = function (medal) {
-		medal = medal.toString();
-		athlete1.medals.push (medal);
-		console.log(athlete2.medals);
-	};
+athlete2['addMedal'] = function(medal) {
+	medal = medal.toString();
+	athlete1.medals.push(medal);
+	console.log(athlete2.medals);
+};
 
 
 // Problem 3
@@ -88,15 +88,15 @@ var athlete3 = {
 	medals: 6,
 	olympian: true,
 
-	introduce: function () {
+	introduce: function() {
 		var introduction;
-		introduction = "'Hello!', my name is " + athlete3.name + " and I am from " + athlete3.countryOfOrigin +".";
+		introduction = "'Hello!', my name is " + athlete3.name + " and I am from " + athlete3.countryOfOrigin + ".";
 		return introduction;
 	},
 
-	addMedal: function (medal) {
+	addMedal: function(medal) {
 		medal = medal.toString();
-		athlete1.medals.push (medal);
+		athlete1.medals.push(medal);
 		console.log(athlete3.medals);
 	}
 };
@@ -106,26 +106,26 @@ var athlete3 = {
 // Create a prototype for athelete. See below for examples:
 // https://github.com/galdamez/ca276-fall2013/blob/master/week8/prototypes.html
 
-function Athlete (name, height, age, countryOfOrigin, medals, olympian) {
-		var name, height, age, countryOfOrigin, medals, olympian;
-		this.name = name.toString();
-		this.height = height.toString();
-		this.age = age;
-		this.countryOfOrigin = countryOfOrigin.toString();
-		this.medals = medals;
-		if (olympian === true || olympian === false)
-			this.olympian = olympian;
-		
+function Athlete(name, height, age, countryOfOrigin, medals, olympian) {
+	var name, height, age, countryOfOrigin, medals, olympian;
+	this.name = name.toString();
+	this.height = height.toString();
+	this.age = age;
+	this.countryOfOrigin = countryOfOrigin.toString();
+	this.medals = medals;
+	if (olympian === true || olympian === false)
+		this.olympian = olympian;
 
-		this.introduce = function () {
+
+	this.introduce = function() {
 		var introduction;
-		introduction = "'Hello!', my name is " + athlete3.name + " and I am from " + athlete3.countryOfOrigin +".";
+		introduction = "'Hello!', my name is " + athlete3.name + " and I am from " + athlete3.countryOfOrigin + ".";
 		return introduction;
 	},
 
-		this.addMedal = function (medal) {
+	this.addMedal = function(medal) {
 		medal = medal.toString();
-		athlete1.medals.push (medal);
+		athlete1.medals.push(medal);
 		console.log(athlete3.medals);
 	}
 }
