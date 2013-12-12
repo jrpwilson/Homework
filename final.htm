@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Rick Wilson CA276 Final Project &ndash; Form Validation</title>
+<style>
+	body { font-family: Helvetica, sans-serif; font-size: 14px; background-color: #ccc; }
+	br { clear: both; }
+	form div, input, label, select, textarea  { display: block; float: left; font-weight: normal;}
+	form header {font-size: 1.5em; font-weight: bold; margin: 30px auto; text-align: center; float: none; clear: both;}
+	form p {text-align: center;}
+	form div label, form div input { float: none; display: inline; }
+	form div, label + input, label + textarea, label + select, label + textarea { margin-bottom: 15px; }
+	form div br { clear: none; }
+	input, textarea { font: 12px Helvetica, Arial; color: #000; }
+	input[type="text"] { width: 250px; }
+	input[type="email"] { width: 175px; }
+	input[type="radio"], input[type="checkbox"] { padding-right: 5px; }
+	label { width: 172px; margin-right: 10px; text-align: right; }
+	textarea { display: inline; height: 75px; width: 225px; }
+	fieldset {width: 350px; padding: 10 px; margin: 0; }
+	fieldset label {text-align: left; width: auto; margin: 5px; }
+	#form_wrapper { border: 1px solid Gray; border-radius: 8px; margin: 0 auto; padding: 10px 15px; width: 600px; background-color: #fff; }
+	.hidden { display: none; }
+	#error { background-color: LightPink; border-radius: 4px; color: DarkRed; padding: 8px; font-weight: bold; }
+	#success { background-color: LightGreen; border-radius: 4px; color: DarkGreen; padding: 8px; font-weight: bold; }
+	#controls {margin: 20px auto; float:none; width: 300px;}
+	#reset   {text-align-center; font-size: 1em; float: left; }
+	#refresh  {text-align-center; font-size: 1em; float: right; }
+	#submit  {text-align-center; font-size: 1.7em; margin: 0 auto; float: none;}
+	.required:after { content:"*"; color:red; font-weight: bold; font-size: 1.2em; }
+	
+</style>		
+</head>
+
+<body>
+	<div id="form_wrapper">
+		<form method="get" action="final.htm">
+			
+			<div id="controls">
+				<input value="Reset Form Data" type="reset" id="reset">
+				<input type="button" onClick="history.go(0)" value="Refresh Page" id="refresh">
+			</div>
+
+			<header>Registration Form</header>
+			<p>Fields denoted with an <span class="required"></span> are required</p>
+
+			<label for="first_name" class="required">First Name</label>
+			<input id="first_name" name="first_name" type="text" placeholder="50 characters max"><br>
+
+			<label for="last_name" class="required">Last name</label>
+			<input id="last_name" name="last_name" type="text" placeholder="50 characters max"><br>
+
+			<label for="age">Your age</label>
+			<input id="age" name="age" type="text"><br>
+
+			<label for="email" class="required">Email</label>
+			<input id="name" name="email" type=" text"><br>
+
+			<label for="experience" class="required">Experience level</label>
+			<select id="experience" name="experience">
+				<option selected="selected" value="" >---Please select---</option>
+				<option value="beginner">Beginner</option>
+				<option value="intermediate">Intermediate</option>
+				<option value="advanced">Advanced</option>
+			</select>
+			<br>
+
+			<label for="about_me" class="required">Bio</label>
+			<textarea id="about_me" name="about_me" type="text" placeholder="140 characters max"></textarea><br>
+
+			<label for="">Personal website</label>
+			<input id="website" name="website" type="text" value=""><br>
+
+			<label for "home_phone">Home phone</label>
+			<input id="home_phone" name-"home_phone" type="text" placeholder="(xxx) xxx-xxx"><br>
+
+			<label for "mobile_phone">Mobile phone</label>
+			<input id="mobile_phone" name-"mobile_phone" type="text" placeholder="(xxx) xxx-xxx"><br>
+
+			<label for="meal" class="required">Meal preference</label>
+			<fieldset id="meal">
+				<label><input name="meal" type="radio">a la carte</label>
+				<label><input name="meal" type="radio">Gluten-intolerant meal</label>
+				<label><input name="meal" type="radio">Kosher</label>
+				<label><input name="meal" type="radio">Jain meal</label>
+				<label><input name="meal" type="radio">Muslim</label>
+				<label><input name="meal" type="radio">Vegetarian</label>
+				<label><input name="meal" type="radio">Vegan</label>
+			</fieldset>
+			<br>
+
+			<label for="skills" class="required">Skills</label>
+			<fieldset id="skills">
+				<label><input name="skills" type="checkbox">HTML</label>
+				<label><input name="skills" type="checkbox">CSS</label>
+				<label><input name="skills" type="checkbox">JavaScript</label>
+				<label><input name="skills" type="checkbox">Jquery</label>
+				<label><input name="skills" type="checkbox">Dojo</label>
+				<label><input name="skills" type="checkbox">Prototype</label>
+				<label><input name="skills" type="checkbox">Flash</label>
+				<label><input name="skills" type="checkbox">Flex</label>
+			</fieldset>
+			<br>
+
+			<label for="date_of_arrival" class="required">Expected date of arrival</label>
+			<input id="date_of_arrival" name="date_of_arrival" type="text" placeholder="use format mm/dd/2014"><br>
+			
+			<label>&nbsp;</label>
+			<div id="error" class="hidden"></div><br>
+
+			<label>&nbsp;</label>
+			<div id="success" class="hidden">Congratulations - All Data Passed Validation!</div><br>
+			
+			<input value="Submit" type="submit" id="submit">
+			<br>
+		</form>
+	</div>
+	<script src="final.js"></script>
+	</body>
+</html>
