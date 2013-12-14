@@ -97,13 +97,6 @@ var athlete3 = {
 // https://github.com/galdamez/ca276-fall2013/blob/master/week8/prototypes.html
 
 function Athlete(name, height, age, countryOfOrigin, medals, isOlympian) {
-	var name = '',
-		height = '',
-		age = '',
-		countryOfOrigin = '',
-		medals = [],
-		olympian = false;
-
 	this.name = name.toString();
 	this.height = height.toString();
 	this.age = age;
