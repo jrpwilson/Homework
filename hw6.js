@@ -10,11 +10,11 @@
 
 // All LI elements
 
-console.log(document.querySelectorAll('LI'));
+console.log(document.querySelectorAll('li'));
 
 // All LI elements that are the descendants of an OL element
 
-console.log(document.querySelectorAll('OL LI'));
+console.log(document.querySelectorAll('ol li'));
 
 // All elements with the class name "highlight"
 
@@ -22,7 +22,7 @@ console.log(document.querySelectorAll('.highlight'));
 
 // Any element under a form tag (hint: the asterisk is the wild card in CSS)
 
-console.log(document.querySelectorAll('Form *'));
+console.log(document.querySelectorAll('form *'));
 
 // All elements with the IDs "movies", "companies", or "fast_food" 
 // (hint: use the comma to separate selectors)
@@ -31,51 +31,51 @@ console.log(document.querySelectorAll('#movies, #companies, #fast_food'));
 
 // All elements that have an ID attribute
 
-console.log(document.querySelectorAll('[ID]'));
+console.log(document.querySelectorAll('[id]'));
 
 // All elements that have an ID attribute that ends with the letter "s"
 
-console.log(document.querySelectorAll('[ID$="s"]'));
+console.log(document.querySelectorAll('[id$="s"]'));
 
 // The first child LI element of all lists, ordered or unordered
 
-console.log(document.querySelectorAll('LI:first-child'));
+console.log(document.querySelectorAll('li:first-child'));
 
 // The second child LI element of all lists, ordered or unordered
 
-console.log(document.querySelectorAll('LI:nth-child(2)'));
+console.log(document.querySelectorAll('li:nth-child(2)'));
 
 // All elements that are empty
 
-console.log(document.querySelectorAll('*:empty'));
+console.log(document.querySelectorAll(':empty'));
 
 // All elements that are checked
 
-console.log(document.querySelectorAll('*[checked]'));
+console.log(document.querySelectorAll(':checked'));
 
 // All radio buttons
 
-console.log(document.querySelectorAll('INPUT[type="radio"]'));
+console.log(document.querySelectorAll('[type="radio"]'));
 
 // All radio buttons that are checked
 
-console.log(document.querySelectorAll('INPUT[type="radio"]:checked'));
+console.log(document.querySelectorAll('[type="radio"]:checked'));
 
 // All TDs that represent the 2nd column in the table with ID "names"
 
-console.log(document.querySelectorAll('TABLE#names TD:nth-child(2)'));
+console.log(document.querySelectorAll('#names td:nth-child(2)'));
 
 // All elements with the class name "hidden" that are not form elements
 
-console.log(document.querySelectorAll('*.hidden:not(FORM)'));
+console.log(document.querySelectorAll('.hidden:not(form)'));
 
 // All even TRs that are descendants of a TBODY
 
-console.log(document.querySelectorAll('TBODY tr:nth-child(2n+0)'));
+console.log(document.querySelectorAll('tbody tr:nth-child(2n)'));
 
 // All odd TRs that are descendants of a TBODY
 
-console.log(document.querySelectorAll('TBODY TR:nth-child(2n+1)'));
+console.log(document.querySelectorAll('tbody TR:nth-child(2n+1)'));
 
 
 // OPTIONAL: Using what you know about arrays and accessing the DOM, write a function 
@@ -119,4 +119,3 @@ the new row would go before it.
 // "bubble" towards the end.
 
 // 5) Remove the empty TBODY element from the DOM tree.
-
