@@ -79,7 +79,7 @@ form.addEventListener('submit', function(e) {
 		errors.push('A brief bio is required');
 	} else {
 		//validates the content of the field against regex character criteria and max length
-		if (bioPattern.test(this.about_me.value) === false) {
+		if (this.about_me.value.length > 140) {
 			errors.push('Your Bio is too long - Please limit your biography to 140 characters');
 		}
 	}
@@ -140,6 +140,7 @@ form.addEventListener('submit', function(e) {
 		errors.push('Please enter a valid date of arrival');
 	}
 
+	//JG: Great work! This is a highly robust function. Do you know if it supports leap years?
 	// Date validation function - works for 2014
 	function isDate(date) {
 		var dateParts, month, day, year;
