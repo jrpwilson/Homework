@@ -1,8 +1,8 @@
 // Rick Wilson CA276 Javascript Final Project 
 var form = document.querySelector('form');
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', function(e) {
 	var errors, i, errorDiv, successDiv, firstNamePattern, firstNameLength, lastNamePattern, lastNameLength, emailPattern, datePattern, bioPattern, bioLength, phonePattern;
-	
+
 	errors = [];
 	errorDiv = document.getElementById('error');
 	successDiv = document.getElementById('success');
@@ -21,39 +21,39 @@ form.addEventListener('submit', function (e) {
 	/*sets regex criteria to test phone number format*/
 	phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
-	
+
 	// required field
 	//validates whether entry has been made in first_name field
 	if (this.first_name.value === "") {
 		errors.push('First name is required');
 	} else {
-			//validates the content of the field against regex criteria
-			if (firstNamePattern.test(this.first_name.value) === false) {
+		//validates the content of the field against regex criteria
+		if (firstNamePattern.test(this.first_name.value) === false) {
 			errors.push('First Name may contain alphanumeric characters and spaces only');
-			} else {
-					//validates whether entry in field exceeds max character value
-					if (firstNameLength.test(this.first_name.value) === false) {
-					errors.push('First Name can be 50 characters max');
-					}
-				}
+		} else {
+			//validates whether entry in field exceeds max character value
+			if (firstNameLength.test(this.first_name.value) === false) {
+				errors.push('First Name can be 50 characters max');
 			}
+		}
+	}
 
 	// required field
 	//validates whether entry has been made in last_name field
 	if (this.last_name.value === "") {
 		errors.push('Last Name is required');
 	} else {
-			//validates the content of the field against regex criteria
-			if (lastNamePattern.test(this.last_name.value) === false) {
+		//validates the content of the field against regex criteria
+		if (lastNamePattern.test(this.last_name.value) === false) {
 			errors.push('Last Name may contain alphanumeric characters and spaces only');
-			} else {
-					//validates whether entry in field exceeds max character value
-					if (lastNameLength.test(this.last_name.value) === false) {
-					errors.push('Last Name can be 50 characters max');
-					}
-				}
-			}		
-		
+		} else {
+			//validates whether entry in field exceeds max character value
+			if (lastNameLength.test(this.last_name.value) === false) {
+				errors.push('Last Name can be 50 characters max');
+			}
+		}
+	}
+
 	// validates entry in age field is a number if entry has been made
 	if (isNaN(this.age.value) === true) {
 		errors.push('Please enter your age in number format');
@@ -64,7 +64,7 @@ form.addEventListener('submit', function (e) {
 		}
 	}
 	//required field
-	/* validates whether entry has been made in email field and tests for valid formatting*/ 
+	/* validates whether entry has been made in email field and tests for valid formatting*/
 	if (emailPattern.test(this.email.value) === false) {
 		errors.push('Please enter a valid e-mail address');
 	}
@@ -78,48 +78,48 @@ form.addEventListener('submit', function (e) {
 	if (this.about_me.value === "") {
 		errors.push('A brief bio is required');
 	} else {
-			//validates the content of the field against regex character criteria and max length
-			if (bioPattern.test(this.about_me.value) === false) {
-					errors.push('Your Bio is too long - Please limit your biography to 140 characters');
-					}
-			}
-		
+		//validates the content of the field against regex character criteria and max length
+		if (bioPattern.test(this.about_me.value) === false) {
+			errors.push('Your Bio is too long - Please limit your biography to 140 characters');
+		}
+	}
+
 
 	/* validates whether entry has been made in website field - runs no further test if field is left blank */
-	if  ((this.website.value) !== "") {
+	if ((this.website.value) !== "") {
 		/*validates format if a url has been entered - function returns an array that contains either a valid url string or null */
 		function is_valid_url(url) {
-				return url.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
-				}	
+			return url.match(/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/);
+		}
 
 		var url = (is_valid_url(form.website.value));
 
-	 	if (url === null) {
-	 	 	//if returned array contains null then error prompt is generated
+		if (url === null) {
+			//if returned array contains null then error prompt is generated
 			errors.push('Website url is invalid');
-			}
+		}
 	}
 
 	//validate format of home phone number 
 	if (phonePattern.test(this.home_phone.value)) {
 		var formattedPhoneNumber =
-		this.home_phone.value.replace(phonePattern, "($1) $2-$3");
+			this.home_phone.value.replace(phonePattern, "($1) $2-$3");
 		console.log(formattedPhoneNumber);
 		this.home_phone.value = formattedPhoneNumber;
 	} else {
-			// Invalid phone number
-			errors.push('Please enter a valid home phone number');
+		// Invalid phone number
+		errors.push('Please enter a valid home phone number');
 	}
-	
+
 	//validate format of mobile phone number 
 	if (phonePattern.test(this.mobile_phone.value)) {
 		var formattedPhoneNumber =
-		this.mobile_phone.value.replace(phonePattern, "($1) $2-$3");
+			this.mobile_phone.value.replace(phonePattern, "($1) $2-$3");
 		console.log(formattedPhoneNumber);
 		this.mobile_phone.value = formattedPhoneNumber;
 	} else {
-			// Invalid phone number
-			errors.push('Please enter a valid mobile phone number');
+		// Invalid phone number
+		errors.push('Please enter a valid mobile phone number');
 	}
 
 
@@ -143,66 +143,66 @@ form.addEventListener('submit', function (e) {
 	// Date validation function - works for 2014
 	function isDate(date) {
 		var dateParts, month, day, year;
-		month="";
-		day="";
-		year="";
+		month = "";
+		day = "";
+		year = "";
 		dateParts = date.split('/');
 
 		if (dateParts.length !== 3) {
 			return false;
-			}
+		}
 		// verify all parts are numbers
 		if (
-			isNaN(parseFloat(dateParts[0])) || 
+			isNaN(parseFloat(dateParts[0])) ||
 			isNaN(parseFloat(dateParts[1])) ||
 			isNaN(parseFloat(dateParts[2]))
-			) {
+		) {
 			return false;
 		}
 
-		month=parseInt(dateParts[0]);
-		day=parseInt(dateParts[1]);
-		year=parseInt(dateParts[2]);
-								
+		month = parseInt(dateParts[0]);
+		day = parseInt(dateParts[1]);
+		year = parseInt(dateParts[2]);
+
 		// month validation
 		if (month < 1 || month > 12) {
 			return false;
-		} 
-		
+		}
+
 		// day validation
 		if ((day < 1) || (day > 31)) {
 			return false;
-		} else  {
+		} else {
 			//30 day months
-			if 	((month === 4 ||
-				  month === 6 ||
-				  month === 9 ||
-				  month === 11) && day === 31) {
-			return false;
+			if ((month === 4 ||
+				month === 6 ||
+				month === 9 ||
+				month === 11) && day === 31) {
+				return false;
 			} else {
 				//February - need to update if in a leap year
 				if (month === 02 && day > 28) {
-				return false;
-				} 
+					return false;
+				}
 			}
 		}
-		
+
 		/* year validation - can change either year to accept range of years, though would need to add further coding to account for leap years */
 		if (year < 2014 || year > 2014) {
 			return false;
-		} 
-		return true;
 		}
-		//end function isDate()
+		return true;
+	}
+	//end function isDate()
 
 	//If any inputs failed prevent form submit
 	if (errors.length > 0) {
 		//prevent form submit
 		e.preventDefault();
-		
+
 		//unhide
 		errorDiv.className = '';
-		
+
 		//clear out previous errors
 		errorDiv.innerHTML = errors.join('<br>');
 	} else {
@@ -212,5 +212,5 @@ form.addEventListener('submit', function (e) {
 		errorDiv.className = 'hidden';
 		successDiv.className = '';
 		e.preventDefault();
-	}		
+	}
 }, false);
